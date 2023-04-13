@@ -1,62 +1,62 @@
 CREATE DATABASE tienda_master;
-USE tienda-master;
+USE tienda_master;
 
-CREATE TABLE usuarios(
+CREATE TABLE users(
 id              int(255) auto_increment not null,
-nombre          varchar(100) not null,
-apellidos       varchar(255),
+name            varchar(100) not null,
+surnames        varchar(255),
 email           varchar(255) not null,
 password        varchar(255) not null,
 rol             varchar(20),
-imagen          varchar(255),
-CONSTRAINT pk_usuarios PRIMARY KEY(id),
+image           varchar(255),
+CONSTRAINT pk_user PRIMARY KEY(id),
 CONSTRAINT uq_email UNIQUE(email)  
 )ENGINE=InnoDb;
 
 
-CREATE TABLE categorias(
+CREATE TABLE categories(
 id              int(255) auto_increment not null,
-nombre          varchar(100) not null,
-CONSTRAINT pk_categorias PRIMARY KEY(id) 
+name            varchar(100) not null,
+CONSTRAINT pk_categories PRIMARY KEY(id) 
 )ENGINE=InnoDb;
 
-CREATE TABLE productos(
+CREATE TABLE products(
 id              int(255) auto_increment not null,
-categoria_id    int(255) not null,
-nombre          varchar(100) not null,
-descripcion     text,
-precio          float(100,2) not null,
+category_id     int(255) not null,
+name            varchar(100) not null,
+description     text,
+price           float(100,2) not null,
 stock           int(255) not null,
-oferta          varchar(2),
-fecha           date not null,
-imagen          varchar(255),
-CONSTRAINT pk_categorias PRIMARY KEY(id),
-CONSTRAINT fk_producto_categoria FOREIGN KEY(categoria_id) REFERENCES categorias(id)
+offers          varchar(2),
+date            date not null,
+image           varchar(255),
+CONSTRAINT pk_categories PRIMARY KEY(id),
+CONSTRAINT fk_product_category FOREIGN KEY(category_id) REFERENCES categories(id)
 )ENGINE=InnoDb;
 
 
-CREATE TABLE pedidos(
+CREATE TABLE orders(
 id              int(255) auto_increment not null,
-usuario_id      int(255) not null,
-provincia       varchar(100) not null,
-localidad       varchar(100) not null,
-direccion       varchar(255) not null,
-coste           float(200,2) not null,
-estado          varchar(20) not null,
-fecha           date,
-hora            time,
-CONSTRAINT pk_pedidos PRIMARY KEY(id),
-CONSTRAINT fk_pedido_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id)
+user_id         int(255) not null,
+province        varchar(100) not null,
+location        varchar(100) not null,
+address         varchar(255) not null,
+cost            float(200,2) not null,
+status          varchar(20) not null,
+date            date,
+hour            time,
+CONSTRAINT pk_orders PRIMARY KEY(id),
+CONSTRAINT fk_order_user FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 )ENGINE=InnoDb;
 
-CREATE TABLE lineas_pedidos(
+CREATE TABLE order_line(
 id              int(255) auto_increment not null,
-pedido_id       int(255) not null,
-producto_id     int(255) not null,
-unidades        int(255) not null,
-CONSTRAINT pk_lineas_pedidos PRIMARY KEY(id),
-CONSTRAINT fk_linea_pedido FOREIGN KEY(pedido_id) REFERENCES pedidos(id),
-CONSTRAINT fk_linea_producto FOREIGN KEY(producto_id) REFERENCES productos(id)
+order_id        int(255) not null,
+product_id      int(255) not null,
+units           int(255) not null,
+CONSTRAINT pk_order_line PRIMARY KEY(id),
+CONSTRAINT fk_order_line FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT fk_product_line FOREIGN KEY(product_id) REFERENCES products(id)
 )ENGINE=InnoDb;
 
 

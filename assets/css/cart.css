@@ -31,8 +31,8 @@
   align-self: right;
 }
 
-.invoice-link{
-    margin-top: 30px;
+.invoice-link {
+  margin-top: 30px;
 }
 
 @media screen and (min-width: 575px) and (max-width: 1490px) {
