@@ -38,6 +38,6 @@
 		<?php endif; ?>
 		<input type="file" name="image" />
 
-		<input class="buttom" type="submit" value="Guardar" />
+		<input class="button" type="submit" value="Guardar" />
 	</form>
 </div>

@@ -31,13 +31,13 @@
 							<?= $product->units ?>
 						</td>
 						<td>
-							<?= $product->price ?>
+							<?= $product->price ?>€
 						</td>
 					</tr>
 				<?php endwhile; ?>
 			</table>
 			<div>
-				Total a pagar: <?= $order->cost ?> $ <br />
+				Total a pagar: <?= $order->cost ?> € <br />
 			</div>
 		<?php endif; ?>
 	<?php elseif (isset($_SESSION['order']) && $_SESSION['order'] != 'complete') : ?>

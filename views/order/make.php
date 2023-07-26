@@ -13,7 +13,7 @@
 		<label for="address">Dirección</label>
 		<input type="text" name="address" value="<?php echo 'default' ?>" />
 		<spam class="disabled"></spam>
-		<input class="buttom" type="submit" value="Confirmar pedido" />
+		<input class="button" type="submit" value="Confirmar pedido" />
 	</form>
 <?php else : ?>
 	<h1 class="title">Necesitas estar identificado</h1>

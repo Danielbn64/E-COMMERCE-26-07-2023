@@ -1,6 +1,6 @@
 <h1 class="title">Gestionar categorias</h1>
 <div class="container">
-	<a href="<?= base_url ?>category/create" class="link-buttom">
+	<a href="<?= base_url ?>category/create" class="button">
 		Nueva
 	</a>
 	<table>

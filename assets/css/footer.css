@@ -2,24 +2,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--second-color);
+  background-color: var(--seventh-color);
   height: 180px;
   width: 100%;
   margin-top: 200px;
 }
 
 .footer p {
-  color: #fff;
+  color: var(--first-color);
 }
 
-@media screen and (min-width: 575px) and (max-width: 1490px) {
+@media screen and (min-width: 270px) and (max-width: 1490px) {
   .footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--second-color);
-    height: 650px;
+    background-color: var(--seventh-color);
+    height: 180px;
     width: 100%;
-    margin-top: 200px;
+    margin-top: 1000px;
   }
 }

@@ -1,4 +1,5 @@
 <?php
+require_once("helpers/pagination.php");
 
 class Product
 {
@@ -11,7 +12,6 @@ class Product
 	private $offer;
 	private $date;
 	private $image;
-
 	private $db;
 
 	public function __construct()
@@ -115,12 +115,31 @@ class Product
 		return $products;
 	}
 
-	public function getAllCategories()
+	public function totalRecords()
 	{
 		$sql = "SELECT p.*, c.name AS 'catname' FROM products p "
 			. "INNER JOIN categories c ON c.id = p.category_id "
+			. "WHERE p.category_id = {$this->getCategory_id()} ";
+		$products = $this->db->query($sql);
+		$num_records = $products->num_rows;
+
+		$pagination = new pagination;
+		$pagination->paginationPolicy($num_records);
+	}
+
+	public function getAllCategories()
+	{
+		$this->totalRecords();
+
+		$pagination = new pagination;
+		$page = $pagination->get_page();
+		$record_per_page = records_per_page;
+		$start_from = ($page - 1) * $record_per_page;
+
+		$sql = "SELECT p.*, c.name AS 'catname' FROM products p "
+			. "INNER JOIN categories c ON c.id = p.category_id "
 			. "WHERE p.category_id = {$this->getCategory_id()} "
-			. "ORDER BY id DESC";
+			. "ORDER BY id DESC LIMIT {$start_from},{$record_per_page}";
 		$products = $this->db->query($sql);
 		return $products;
 	}
@@ -158,8 +177,6 @@ class Product
 		}
 
 		$sql .= " WHERE id={$this->id};";
-
-
 		$save = $this->db->query($sql);
 
 		$result = false;

@@ -1,6 +1,6 @@
 <h1 class=title>Gestión de productos</h1>
 
-<a href="<?= base_url ?>product/create" class="link-buttom">
+<a href="<?= base_url ?>product/create" class="button">
 	Nuevo
 </a>
 

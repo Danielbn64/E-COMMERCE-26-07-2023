@@ -15,12 +15,6 @@
   align-self: left;
 }
 
-.button-delete {
-  display: block;
-  float: left;
-  width: 100px;
-}
-
 .button-carrito {
   width: 70px;
   margin: 0px auto;

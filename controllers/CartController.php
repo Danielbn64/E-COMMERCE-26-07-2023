@@ -3,7 +3,6 @@ require_once 'models/product.php';
 
 class cartController
 {
-
 	public function index()
 	{
 		if (isset($_SESSION['cart']) && count($_SESSION['cart']) >= 1) {
@@ -31,13 +30,13 @@ class cartController
 				}
 			}
 		}
-
+		
 		if (!isset($counter) || $counter == 0) {
 			// Conseguir producto
 			$product = new Product();
 			$product->setId($product_id);
 			$product = $product->getOne();
-
+			
 			// Añadir al carrito
 			if (is_object($product)) {
 				$_SESSION['cart'][] = array(

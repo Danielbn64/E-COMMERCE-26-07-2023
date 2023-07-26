@@ -1,6 +1,5 @@
 {
     "require": {
-        "stefangabos/zebra_pagination": "^2.4",
         "tecnickcom/tcpdf": "^6.6"
     }
 }

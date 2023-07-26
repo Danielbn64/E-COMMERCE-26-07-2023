@@ -1,20 +1,21 @@
 <?php if (isset($product)) : ?>
-	<h1 class=title><?= $product->name ?></h1>
 	<div class="container">
 		<div class="see-container">
+		<h1 class="product-name-see-tablet"><?= $product->name ?></h1>
 			<div class="image-container-see">
 				<?php if ($product->image != null) : ?>
-					<img class="img-see" src="<?= base_url ?>uploads/images/<?= $product->image ?>" />
+					<img class="image-see" src="<?= base_url ?>uploads/images/<?= $product->image ?>" />
 				<?php else : ?>
 					<img src="<?= base_url ?>assets/img/placeholder.png" />
 				<?php endif; ?>
 				<div class=buy>
-					<a href="<?= base_url ?>cart/add&id=<?= $product->id ?>" class="button">Comprar</a>
-					<p class="price"><?= $product->price ?>$</p>
+					<p class="product-price"><?= $product->price ?>€</p>
+					<a href="<?= base_url ?>cart/add&id=<?= $product->id ?>" class="button buy-link">Comprar</a>
 				</div>
 			</div>
 			<div class="data">
-				<p class="description"><?= $product->description ?></p>
+				<h1 class="product-name-see-desktop"><?= $product->name ?></h1>
+				<p class="see-description"><?= $product->description ?></p>
 			</div>
 		</div>
 	</div>

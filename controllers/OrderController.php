@@ -3,7 +3,6 @@ require_once 'models/order.php';
 
 class orderController
 {
-
 	public function make()
 	{
 		require_once 'views/order/make.php';

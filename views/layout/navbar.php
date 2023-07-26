@@ -1,76 +1,118 @@
-<header class="header">
-	<nav class="navigation">
-		<?php $categories = Utils::showCategories(); ?>
-		<div class="menu">
-			<div class="menu-left">
-				<div class="logo">
-					<a href="<?= base_url ?>">
-						Tienda de Online
-					</a>
-				</div>
-				<input type="checkbox" id="deploy-menu" class="categories-menu-check">
-				<div class="categories">
-					<a class="categories-buttom" href="<?= base_url ?>">Inicio</a>
-					<?php while ($cat = $categories->fetch_object()) : ?>
-						<a class="categories-buttom" href="<?= base_url ?>category/see&id=<?= $cat->id ?>"><?= $cat->name ?></a>
-					<?php endwhile; ?>
-				</div>
-			</div>
-			<div class="menu-right">
-				<?php if (!isset($_SESSION['identity'])) : ?>
-					<div class="user">
-						<li><a href="<?= base_url ?>user/register">Registrate aqui</a></li>
-						<a href="<?= base_url ?>user/ingresar">Entrar a la web</a>
+<?php if (!Utils::hideNavbar()) : ?>
+	<header class="header">
+		<nav class="navigation">
+			<?php $categories = Utils::showCategories(); ?>
+			<div class="menu">
+				<div class="menu-left">
+					<div id="menu_icon" class="menu-icon" onclick="toggleMenu()">
+						<span></span>
+						<span></span>
+						<span></span>
 					</div>
-				<?php else : ?>
-					<div class="user-in">
-						<div class="user-panel">
-							<h3 class="user-name"><?= $_SESSION['identity']->name ?> <?= $_SESSION['identity']->surnames ?></h3>
-							<ul>
-								<li><a href="<?= base_url ?>user/logout">Cerrar sesión</a></li>
-							</ul>
+					</label>
+					<div class="logo-container">
+						<iframe class="logo-desktop" scrolling="no" frameborder="0" height="80px" src="<?= base_url ?>assets/svg/logo.html"></iframe>
+						<iframe class="logo-mobile" scrolling="no" frameborder="0" height="30px" src="<?= base_url ?>assets/svg/logo-mobile.html"></iframe>
+					</div>
+					<div id="categories_menu" class="categories">
+						<div class="menu-icon menu-icon-deployed" onclick="toggleMenu()">
+							<span class="filled"></span>
+							<span class="filled"></span>
+							<span class="filled"></span>
 						</div>
-						<label class="cart-icon" for="cart">
-							<h4>Mi carrito</h4>
-							<svg viewBox="0 0 24 24">
-								<path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z" />
-							</svg>
-						</label>
-						<input type="checkbox" id="cart" class="cart-menu-check">
-						<?php $stats = Utils::statsCart(); ?>
-						<ul class="cart-menu">
-							<li><a href="<?= base_url ?>cart/index">Products (<?= $stats['count'] ?>)</a></li>
-							<li><a href="<?= base_url ?>cart/index">Total: <?= $stats['total'] ?> $</a></li>
-							<li><a href="<?= base_url ?>cart/index">Ver el carrito</a></li>
-							<li><a href="<?= base_url ?>order/my_orders">Mis pedidos</a></li>
-						</ul>
-					<?php endif; ?>
+						<div class="menu-deploy-right">
+						</div>
+						<span id="close_menu" onclick="closeMenu()"></span>
+						<a class="categories-buttom" href="<?= base_url ?>">Inicio</a>
+						<?php while ($cat = $categories->fetch_object()) : ?>
+							<a class="categories-buttom" href="<?= base_url ?>category/see&id=<?= $cat->id ?>"><?= $cat->name ?></a>
+						<?php endwhile ?>
 					</div>
-					<div class="menu-admin">
-						<?php if (isset($_SESSION['admin'])) : ?>
-							<label class="setting-icon" for="panel">
-								<h4>Panel de<br>administrador</h4>
-							</label>
-							<input type="checkbox" id="panel" class="admin-menu-check">
-							<div class="admin-menu">
-								<ul>
-									<li><a href="<?= base_url ?>category/index">Gestionar categorias</a></li>
-									<li><a href="<?= base_url ?>product/managment">Gestionar productos</a></li>
-									<li><a href="<?= base_url ?>order/managment">Gestionar pedidos</a></li>
-								</ul>
+				</div>
+				<div class="menu-right">
+					<?php if (!isset($_SESSION['identity'])) : ?>
+						<div class="user">
+							<div class="in-icon-out">
+								<iframe src="<?= base_url ?>assets/svg/user-out.html" scrolling="no" frameborder="0" height="43" width="55"></iframe>
+								<a href="<?= base_url ?>user/ingresar">
+									<div>
+										Ingresar
+									</div>
+								</a>
 							</div>
-						<?php endif; ?>
-					</div>
-			</div>
-		</div>
-	</nav>
-</header>
-<label for="deploy-menu">
-	<div class="menu-icon">
-		<span></span>
-		<span></span>
-		<span></span>
-	</div>
-</label>
+							<div class="cart-icon-out">
+								<iframe src=" <?= base_url ?>assets/svg/cart.html" scrolling="no" frameborder="0" height="52" width="65"></iframe>
+								<a href="<?= base_url ?>cart/index"">										
+								<div>
+									Mi carrito
+								</div>
+							</a>
+						</div>
+				</div>
+					<?php else : ?>
+				<div class=" user">
+									<div class="in-icon">
+										<iframe src="<?= base_url ?>/assets/svg/user.html" scrolling="no" frameborder="0" height="43" width="55"></iframe>
+										<div id="in_icon">
+											Mi Cuenta
+										</div>
+									</div>
+									<div id="user_menu" class="user-acount">
+										<p class="user-name"><?= $_SESSION['identity']->name ?> <?= $_SESSION['identity']->surnames ?></p>
+										<a href="<?= base_url ?>order/my_orders">
+											<p class="options">- Mis pedidos</p>
+										</a>
+										<div class="button close-session-button">
+											<a href="<?= base_url ?>user/logout">
+												Cerrar sesión
+											</a>
+										</div>
+									</div>
+									<div class="cart-icon-out">
+										<iframe src="<?= base_url ?>/assets/svg/cart.html" scrolling="no" frameborder="0" height="52" width="65"></iframe>
+										<a href="<?= base_url ?>cart/index">
+											<div id="cart">
+												Mi carrito
+											</div>
+										</a>
+									</div>
+									<?php $stats = Utils::statsCart() ?>
+									<div id="cart_menu" class="cart-menu">
+										<a href="<?= base_url ?>cart/index">
+											<p>Productos (<?= $stats['count'] ?>)</p>
+										</a>
+										<a href="<?= base_url ?>cart/index">
+											<p>Total: <?= $stats['total'] ?> €</p>
+										</a>
+									</div>
+								<?php endif ?>
+							</div>
+							<?php if (isset($_SESSION['admin'])) : ?>
+								<div class="user">
+									<div class="admin-icon">
+										<iframe src="<?= base_url ?>/assets/svg/admin.html" scrolling="no" frameborder="0" height="50" width="50"></iframe>
+										<div id="admin">
+											Administrar
+										</div>
+									</div>
+								</div>
+								<div id="admin_menu" class="admin-menu">
+									<a class="option" href="<?= base_url ?>category/index">
+										<p>Gestionar categorias</p>
+									</a></li>
+									<a class="option" href="<?= base_url ?>product/managment">
+										<p>Gestionar productos</p>
+									</a></li>
+									<a class="option" href="<?= base_url ?>order/managment">
+										<p>Gestionar pedidos</p>
+									</a></li>
+								</div>
+							<?php endif ?>
+						</div>
+				</div>
+		</nav>
+	</header>
+<?php endif ?>
 <!-- CONTENIDO CENTRAL -->
 <div class="central">
+	<span id="darkening"></span>

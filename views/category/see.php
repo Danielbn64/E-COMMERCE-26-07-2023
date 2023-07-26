@@ -3,35 +3,35 @@
 	<?php if ($products->num_rows == 0) : ?>
 		<p class="empty">No hay productos para mostrar</p>
 	<?php else : ?>
-		<div class="container">
-			<?php while ($note = $notes->fetch_object()) : ?>
-				<?php while ($product = $products->fetch_object()) : ?>
-					<div class="product">
+		<div class="products-container">
+			<?php while ($product = $products->fetch_object()) : ?>
+				<article class="product">
+					<a href="<?= base_url ?>product/see&id=<?= $product->id ?>">
+						<h4 class="product-name-desktop"><?= $product->name ?></h4>
+					</a>
+					<div class="description-container">
+						<?php if ($product->image != null) : ?>
+						<div class="image-container">
+								<a href="<?= base_url ?>product/see&id=<?= $product->id ?>">
+									<img class="image" width="330px" height="auto" src="<?= base_url ?>uploads/images/<?= $product->image ?>" />
+								</a>
+							<?php else : ?>
+								<img src="<?= base_url ?>assets/img/placeholder.png" />
+							<?php endif; ?>
+						</div>
 						<a href="<?= base_url ?>product/see&id=<?= $product->id ?>">
-							<div class="image-container">
-								<?php if ($product->image != null) : ?>
-									<img class="img" width="330px" height="auto" src="<?= base_url ?>uploads/images/<?= $product->image ?>" />
-								<?php else : ?>
-									<img src="<?= base_url ?>assets/img/placeholder.png" />
-								<?php endif; ?>
+							<div class="product-preview">
+								<h4 class="product-name"><?= $product->name ?></h4>
+								<p class="description"><?= $product->description ?></p>
+								<p class="price"><?= $product->price . "€" ?></p>
 							</div>
 						</a>
-						<div class="product-preview">
-							<h2><?= $product->name ?></h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Pellentesque egestas iaculis orci varius gravida. Donec ullamcorper
-								accumsan ipsum, in pellentesque lorem accumsan sed. Sed pellentesque
-								sed nisl quis aliquam. Fusce
-							</p>
-							<p><?= $product->price ?></p>
-							<a href="<?= base_url ?>cart/add&id=<?= $product->id ?>" class="button">Comprar</a>
-						</div>
 					</div>
-				<?php endwhile; ?>
+				</article>
 			<?php endwhile; ?>
 		</div>
 		<div class="pagination-wrapper">
-			<?php $pagination->render() ?>
+			<?php pagination::render(); ?>
 		</div>
 	<?php endif; ?>
 <?php else : ?>

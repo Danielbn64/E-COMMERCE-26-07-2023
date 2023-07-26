@@ -1,7 +1,7 @@
 <?php
 require_once 'models/category.php';
 require_once 'models/product.php';
-require_once 'vendor/autoload.php';
+require_once 'helpers/pagination.php';
 
 class categoryController
 {
@@ -34,17 +34,6 @@ class categoryController
 			$product = new Product();
 			$product->setCategory_id($id);
 			$products = $product->getAllCategories();
-
-			// Paginar la vista:
-			$products = $this->db->query("SELECT * FROM `products` WHERE `category_id`=$id");
-			$rowCount = $products->num_rows;
-			$pagination = new Zebra_Pagination();
-			$pagination->records($rowCount);
-			$maxArticles = 12;
-			$pagination->records_per_page($maxArticles);
-			$page = $pagination->get_page('views/product/see.php');
-			$startHere = (($page - 1) * $maxArticles);
-			$notes = $this->db->query("SELECT * FROM `products` WHERE `category_id`=$id LIMIT $startHere ,$maxArticles");
 		}
 
 		require_once 'views/category/see.php';
@@ -65,6 +54,6 @@ class categoryController
 			$category->setName($_POST['name']);
 			$save = $category->save();
 		}
-		header("Location:" . base_url . "category/index");
+		require_once 'views/category/confirmed.php';
 	}
 }

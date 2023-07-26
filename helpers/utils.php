@@ -52,7 +52,6 @@ class Utils
 				$stats['total'] += $product['price'] * $product['units'];
 			}
 		}
-
 		return $stats;
 	}
 
@@ -71,5 +70,21 @@ class Utils
 		}
 
 		return $value;
+	}
+
+	public static function hideNavbar()
+	{
+		$current_url = $_SERVER['REQUEST_URI'];
+		$current_url = domain_url . $current_url;
+		$register_view = domain_url . "/e-comerce/user/register";
+		$login_view = domain_url . "/e-comerce/user/ingresar";
+
+		if ($register_view == $current_url || $login_view == $current_url) {
+
+			return true;
+		} else {
+
+			return false;
+		}
 	}
 }

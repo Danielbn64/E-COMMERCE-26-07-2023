@@ -16,7 +16,7 @@
 		?>
 			<tr>
 				<td>
-					<a href="<?= base_url ?>order/detail&id=<?= $order->id ?>"><?= $order->id ?></a>
+					<?= $order->id ?>
 				</td>
 				<td>
 					<?= $order->cost ?> $

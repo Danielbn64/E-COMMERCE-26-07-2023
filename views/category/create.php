@@ -3,6 +3,6 @@
 	<form action="<?= base_url ?>category/save" method="POST">
 		<label for="name">Nombre</label>
 		<input type="text" name="name" required />
-		<input class="buttom" type="submit" value="Guardar" />
+		<input class="button" type="submit" value="Guardar" />
 	</form>
 </div>
