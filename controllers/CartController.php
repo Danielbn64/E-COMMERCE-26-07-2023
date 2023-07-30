@@ -30,13 +30,13 @@ class cartController
 				}
 			}
 		}
-		
+
 		if (!isset($counter) || $counter == 0) {
 			// Conseguir producto
 			$product = new Product();
 			$product->setId($product_id);
 			$product = $product->getOne();
-			
+
 			// Añadir al carrito
 			if (is_object($product)) {
 				$_SESSION['cart'][] = array(
@@ -47,7 +47,8 @@ class cartController
 				);
 			}
 		}
-		header("Location:" . base_url . "cart/index");
+		$url = base_url . 'cart/index?refresh=' . time();
+		echo '<script>setTimeout(function(){ window.location.href = "' . $url . '"; }, 0);</script>';
 	}
 
 	public function delete()
@@ -56,7 +57,8 @@ class cartController
 			$index = $_GET['index'];
 			unset($_SESSION['cart'][$index]);
 		}
-		header("Location:" . base_url . "cart/index");
+		$url = base_url . 'cart/index?refresh=' . time();
+		echo '<script>setTimeout(function(){ window.location.href = "' . $url . '"; }, 0);</script>';
 	}
 
 	public function up()
@@ -65,7 +67,8 @@ class cartController
 			$index = $_GET['index'];
 			$_SESSION['cart'][$index]['units']++;
 		}
-		header("Location:" . base_url . "cart/index");
+		$url = base_url . 'cart/index?refresh=' . time();
+		echo '<script>setTimeout(function(){ window.location.href = "' . $url . '"; }, 0);</script>';
 	}
 
 	public function down()
@@ -78,12 +81,14 @@ class cartController
 				unset($_SESSION['cart'][$index]);
 			}
 		}
-		header("Location:" . base_url . "cart/index");
+		$url = base_url . 'cart/index?refresh=' . time();
+		echo '<script>setTimeout(function(){ window.location.href = "' . $url . '"; }, 0);</script>';
 	}
 
 	public function delete_all()
 	{
 		unset($_SESSION['cart']);
-		header("Location:" . base_url . "cart/index");
+		$url = base_url . 'cart/index?refresh=' . time();
+		echo '<script>setTimeout(function(){ window.location.href = "' . $url . '"; }, 0);</script>';
 	}
 }

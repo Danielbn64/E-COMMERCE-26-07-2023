@@ -11,20 +11,16 @@ class orderController
 	public function add()
 	{
 		if (isset($_SESSION['identity'])) {
-			//Si no existe la dirección en la tabla de usuarios en la base de datos has esto:
 			$user_id = $_SESSION['identity']->id;
 			$user_name = $_SESSION['identity']->name;
 			$user_name = "default";
 			$user_surnames = $_SESSION['identity']->surnames;
 			$user_surnames = "default";
-			// si no no lo hagas:
 			$province = isset($_POST['province']) ? $_POST['province'] : false;
 			$location = isset($_POST['location']) ? $_POST['location'] : false;
 			$address = isset($_POST['address']) ? $_POST['address'] : false;
-
 			$stats = Utils::statsCart();
 			$cost = $stats['total'];
-
 			if ($province && $location && $address) {
 				// Guardar datos en bd
 				$order = new Order();
@@ -36,10 +32,7 @@ class orderController
 				$order->setAddress($address);
 				$order->setCost($cost);
 				$save = $order->save();
-
-				// Guardar linea pedido
 				$save_line = $order->save_line();
-
 				if ($save && $save_line) {
 					$_SESSION['order'] = "complete";
 				} else {
@@ -48,9 +41,8 @@ class orderController
 			} else {
 				$_SESSION['order'] = "failed";
 			}
-			header("Location:" . base_url . 'order/confirmed');
+			$this->confirmed();
 		} else {
-			// Redigir al index
 			header("Location:" . base_url);
 		}
 	}
