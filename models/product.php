@@ -1,5 +1,5 @@
 <?php
-require_once("helpers/pagination.php");
+require_once("helpers/Pagination.php");
 
 class Product
 {
@@ -131,7 +131,7 @@ class Product
 	{
 		$this->totalRecords();
 
-		$pagination = new pagination;
+		$pagination = new Pagination;
 		$page = $pagination->get_page();
 		$record_per_page = records_per_page;
 		$start_from = ($page - 1) * $record_per_page;
@@ -150,7 +150,7 @@ class Product
 		return $products;
 	}
 
-	public function getOne()
+	 function getOne()
 	{
 		$product = $this->db->query("SELECT * FROM products WHERE id = {$this->getId()}");
 		return $product->fetch_object();

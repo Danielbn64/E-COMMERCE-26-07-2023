@@ -30,6 +30,5 @@ function prevSlider() {
   $(".slider li:nth-child(" + imgPosition + ")").fadeIn();
 }
 
-// $('.back-arrow').click(prevSlider);
 $(".next-arrow").click(nextSlider);
 $(".back-arrow").click(prevSlider);

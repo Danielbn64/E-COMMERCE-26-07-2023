@@ -76,14 +76,17 @@ class Utils
 	{
 		$current_url = $_SERVER['REQUEST_URI'];
 		$current_url = domain_url . $current_url;
-		$register_view = domain_url . "/e-comerce/user/register";
-		$login_view = domain_url . "/e-comerce/user/ingresar";
+
+		//Configurar variable de entorno para este caso o plantearse otra solución:
+		//en produción el dominio puede cambiar y la base url ya no va a tener prefijo
+		///e-comerce;
+
+		$register_view = base_url . "user/register";
+		$login_view = base_url . "user/ingresar";
 
 		if ($register_view == $current_url || $login_view == $current_url) {
-
 			return true;
 		} else {
-
 			return false;
 		}
 	}

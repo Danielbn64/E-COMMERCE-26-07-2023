@@ -34,7 +34,7 @@
 
 		<label for="image">Imagen</label>
 		<?php if (isset($pro) && is_object($pro) && !empty($pro->image)) : ?>
-			<img src="<?= base_url ?>uploads/images/<?= $pro->image ?>" class="thumb" />
+			<img class="adjust-size" src="<?= base_url ?>uploads/images/<?= $pro->image ?>" height="100px" />
 		<?php endif; ?>
 		<input type="file" name="image" />
 

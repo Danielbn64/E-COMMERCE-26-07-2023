@@ -96,7 +96,8 @@ class productController
 		} else {
 			$_SESSION['product'] = "failed";
 		}
-		header('Location:' . base_url . 'product/managment');
+		$url = base_url . 'product/managment?refresh=' . time();
+		echo '<script>setTimeout(function(){ window.location.href = "' . $url . '"; }, 0);</script>';
 	}
 
 	public function edit()
@@ -135,7 +136,7 @@ class productController
 		} else {
 			$_SESSION['delete'] = 'failed';
 		}
-
-		header('Location:' . base_url . 'product/managment');
+		$url = base_url . 'product/managment?refresh=' . time();
+		echo '<script>setTimeout(function(){ window.location.href = "' . $url . '"; }, 0);</script>';;
 	}
 }

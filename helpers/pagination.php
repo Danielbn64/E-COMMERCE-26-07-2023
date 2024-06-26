@@ -1,6 +1,6 @@
 <?php
 
-class pagination
+class Pagination
 {
     private static $total_pagination;
 

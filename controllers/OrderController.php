@@ -61,6 +61,7 @@ class orderController
 			$invoice = new Order();
 			$data_invoice = $invoice->getInvoiceInfo($identity->id);
 			$invoice_info = $data_invoice->fetch_object();
+	
 		}
 		require_once 'views/order/confirmed.php';
 	}

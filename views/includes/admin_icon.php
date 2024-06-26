@@ -1,0 +1,1 @@
+<img class="admin-icon" id="admin" src="<?= base_url ?>/assets/svg/admin.svg" height="40px"></img>

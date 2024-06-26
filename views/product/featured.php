@@ -5,9 +5,9 @@
 		</div>
 		<div class="slider">
 			<ul>
-				<li><img src="uploads/images/sample-1.jpg" alt="ejemplo 1"></li>
-				<li><img src="uploads/images/sample-2.jpg" alt="ejemplo 2"></li>
-				<li><img src="uploads/images/sample-3.jpg" alt="ejemplo 3"></li>
+				<li><img src="<?= base_url ?>assets/img/sample-1.jpg" alt="ejemplo 1"></li>
+				<li><img src="assets/img/sample-2.jpg" alt="ejemplo 2"></li>
+				<li><img src="assets/img/sample-3.jpg" alt="ejemplo 3"></li>
 			</ul>
 		</div>
 		<div class="arrow next-arrow">

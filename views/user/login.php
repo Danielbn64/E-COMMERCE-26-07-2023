@@ -1,7 +1,8 @@
-<div class="red-strip">
-    <iframe class="logo-mobile-form"scrolling="no" frameborder="0" height="30px" src="<?= base_url ?>/assets/svg/logo-mobile.html"></iframe>
-    <iframe class="logo-desktop-form" scrolling="no" frameborder="0" height="80px" src="<?= base_url ?>/assets/svg/logo.html"></iframe>
-</div>
+<span class="strip">
+    <a href="<?= base_url ?>">
+        <img class="logo-mobile" src="<?= base_url ?>/assets/svg/logo.svg" />
+    </a>
+</span>
 <h1 class="title">Ingresar</h1>
 <p>Puedes ingresar con: cuentadeprueba@gmail.com</p>
 <p>Contraseña: Contraseñadeprueba0</p>
