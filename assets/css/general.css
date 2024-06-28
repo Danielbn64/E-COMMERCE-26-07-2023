@@ -8,6 +8,14 @@
 html {
   max-width: 100% !important;
   overflow-x: hidden !important;
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  
 }
 
 .hide-vertical-scrollbar {
