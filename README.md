@@ -21,8 +21,7 @@ http://185.77.96.216:8082/
 
 ![lista_del_pedido](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/22342361-1458-4fbb-8d25-2992f506a29f)
 
-![gestion_De_productos](https://github.com/
-Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/8dca3caf-2dc3-464f-ac56-7fee1600c507)
+![gestion_De_productos](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/9c6ff1c5-e274-40a3-a29d-8b5fdce090e7)
 
 ![creación_y_edición_de_productos](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/88f23071-3a4b-41bc-ab83-a85f49c364ca)
 
