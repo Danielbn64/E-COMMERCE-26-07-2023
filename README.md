@@ -18,9 +18,10 @@ Puedes ver la aplicación desplegada en el siguiente enlace: http://185.77.96.21
 
 ![navegación_y_página_de_inicio](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/f8da69d3-95bb-44c6-a9fc-d142df88824b)
 
-- Menú de categorias adaptable ha diferentes dispositivos.
 
 ![listado_de_productos_tienda](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/b74120a2-4053-46f4-9a4b-b4bc48fb3b3e)
+
+- Menú desplegable de categorias adaptable ha diferentes dispositivos.
 
 ![menú_desplegable_categorias_responsive](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/17413dd5-bc7f-45d7-a178-07ff3c672f14)
 
