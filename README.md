@@ -61,11 +61,17 @@ Formulario de dirección de envío.
 
 ![gestion_De_productos](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/9c6ff1c5-e274-40a3-a29d-8b5fdce090e7)
 
+- Formulario de creación y edición de productos.
+
 ![creación_y_edición_de_productos](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/88f23071-3a4b-41bc-ab83-a85f49c364ca)
+
+- Listado de categorías y creación de categorías.
 
 ![gestion_de_categorias](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/fa274532-a72c-4153-ba50-751334fe459c)
 
 ![Crear_nueva_categoria](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/64f3b7b4-ed0b-4031-8831-6a025d81a489)
+
+Esquema de la base de datos.
 
 ![diagrama_relacional_tienda](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/fb47bdd2-7e1d-400d-b0a7-71abd55460e9)
 
