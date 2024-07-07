@@ -5,6 +5,17 @@ utliliza una base de datos en MySQLWorbench v8.
 
 Puedes ver la aplicación desplegada en el siguiente enlace: http://185.77.96.216:8082/
 
+# Funcionalidad:
+
+- Página de inicio.
+- Navegación con menu de opciones:
+  1) Listado de categorias.
+  2) Iniciar sessión.
+  3) Carrito de compra.
+  4) Enlace al inicio.
+- Presentación con carrusel de imágenes.
+- Listado de productos.
+
 ![navegación_y_página_de_inicio](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/f8da69d3-95bb-44c6-a9fc-d142df88824b)
 
 ![listado_de_productos_tienda](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/b74120a2-4053-46f4-9a4b-b4bc48fb3b3e)
