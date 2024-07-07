@@ -1,8 +1,9 @@
 # E-COMMERCE
-http://185.77.96.216:8082/
 
 Ejemplo de tienda de artículos en linea, desarrollado con PHP v7.4.33,
-utliliza una base de datos en MySQLWorbench v8
+utliliza una base de datos en MySQLWorbench v8.
+
+Puedes ver la aplicación desplegada en el siguiente enlace: http://185.77.96.216:8082/
 
 ![navegación_y_página_de_inicio](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/f8da69d3-95bb-44c6-a9fc-d142df88824b)
 
