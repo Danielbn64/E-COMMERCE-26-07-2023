@@ -49,6 +49,8 @@ Formulario de dirección de envío.
 
 ![dirección_de_envio_formulario](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/d7fc3064-55a6-4498-8643-a639082d217a)
 
+Informe del pedido.
+
 ![confirmación_del_pedido](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/49e10ba1-0d9d-471c-b365-1f01c7b9383b)
 
 ![lista_del_pedido](https://github.com/Danielbn64/E-COMMERCE-26-07-2023/assets/98886911/22342361-1458-4fbb-8d25-2992f506a29f)
